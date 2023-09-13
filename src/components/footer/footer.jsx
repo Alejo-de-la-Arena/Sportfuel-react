@@ -1,13 +1,17 @@
-function Footer(props) {
+import './FooterStyle.css'
+
+const Footer = () => {
     return (
-        <footer>
-            <Titulo
-                titulo={'soy un titulo'}
-                subtitulo={'soy un subtitulo'}
-            />
-            <h3> Esto es un footer </h3>
-        </footer>
+            <section className="contact">
+                <h2 className="section-title"> ¡Contact Us! </h2>
+                <input className="inp-contact" type="text" placeholder="Full Name..."  />
+                <br />
+                <input className="inp-contact" type="email" placeholder="Email..." name="mail" id="email"  />
+                <br />
+                <input className="inp-contact" type="number" placeholder="Phone Number..." name="cellnum" id="cellnumber" />
+                <br />
+                <button className="btn-contact" role="button">Send</button>
+            </section>
     );
 }
-
-export default Footer;
+export default Footer

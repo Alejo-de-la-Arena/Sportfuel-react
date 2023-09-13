@@ -1,0 +1,54 @@
+:root {
+    --bg-color: #333333;
+    
+    --second-bg-color: #007acc;
+    
+    --text-color: #fff;
+    
+    --main-color: #ffa500;
+    
+}
+
+
+.contact {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inp-contact {
+    font-size: 2rem;
+    padding-top: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: .2rem solid #2c2c2c;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.btn-contact {
+    background-color: var(--main-color);
+    border-radius: .2rem;
+    box-sizing: border-box;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    outline: none;
+    padding: 8px 0.8em;
+    text-align: center;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-contact:hover,
+.btn-contact:focus {
+    background-color: var(--bg-color);
+    border: .2rem solid var(--main-color);
+    color: var(--text-color);
+}
+

@@ -12,10 +12,15 @@
 
 .contact {
     background-color: var(--bg-color);
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.section-title{
+    color: var(--text-color);
 }
 
 .inp-contact {

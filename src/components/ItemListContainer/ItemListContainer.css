@@ -1,0 +1,40 @@
+:root {
+    --bg-color: #333333;
+    
+    --second-bg-color: #007acc;
+    
+    --text-color: #fff;
+    
+    --main-color: #ffa500;
+    
+}
+
+.container-products{
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-inf{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.btn-detail{
+    font-size: 2rem;
+    background-color: var(--main-color);
+    border-radius: 10%;
+}
+
+.img-product{
+    border: solid .2rem var(--main-color);
+    width: 27rem;
+    height: 20rem;
+}
+
+.div-products-ilc{
+    background-color: var(--bg-color);
+}

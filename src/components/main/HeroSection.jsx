@@ -1,4 +1,5 @@
 import heroImg from '../../assets/img/creatine-img-pexels.avif'
+import { products } from '../data/mockFetch';
 import './MainStyle.css';
 
 const HeroSection = () => {
@@ -9,7 +10,7 @@ const HeroSection = () => {
                 <div className="hero-content">
                     <h1 className="hero-tagline">Unlock Your Potential</h1>
                     <p className="hero-subtitle">Elevate your fitness journey with premium sports supplements.</p>
-                    <a href="#Products" className="cta-button">Explore Products</a>
+                    <button className="cta-button"><a href="#Products">Explore Products</a></button>
                 </div>
             </section>
     );

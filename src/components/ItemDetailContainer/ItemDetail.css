@@ -1,0 +1,35 @@
+:root {
+    --bg-color: #333333;
+    
+    --second-bg-color: #007acc;
+    
+    --text-color: #fff;
+    
+    --main-color: #ffa500;
+    
+}
+
+.container-detail{
+    padding-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    background-color: var(--bg-color);
+    
+}
+
+.div-info{
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.counter-detail-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-detail-cart{
+    background-color: var(--main-color);
+}

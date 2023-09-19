@@ -1,0 +1,31 @@
+:root {
+    --bg-color: #333333;
+    
+    --second-bg-color: #007acc;
+    
+    --text-color: #fff;
+    
+    --main-color: #ffa500;
+    
+}
+
+.item-count-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    background-color: var(--bg-color);
+}
+
+.item-count-container h2{
+    color: var(--text-color);
+}
+
+.btn-counter{
+    background-color: var(--main-color);
+}
+
+.btn-add-to-cart{
+    background-color: var(--second-bg-color);
+}

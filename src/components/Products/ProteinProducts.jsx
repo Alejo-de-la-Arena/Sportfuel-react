@@ -11,28 +11,31 @@ const ProteinProducts = () => {
     };
 
     return (
-        <div className='products-container'>
-            <h1>Products</h1>
-            <ul className='products-flex'>
-                {products.map((product) => (
-                    <li className='product-li' key={product.id}>
-                        <img src={product.imageUrl} alt={product.name} />
-                        <h3 className='product-name'>{product.name}</h3>
-                        <p className='product-price'>Price: ${product.price}</p>
-                        {expandedProduct === product.id ? (
-                            <div className='see-more'>
-                                <p>{product.additionalDetails}</p>
-                                <button  onClick={() => handleExpandProduct(null)}></button>
-                            </div>
-                        ) : (
-                            <Link className='btn-see-more' to={`/Products/${product.id}`} onClick={() => handleExpandProduct(product.id)}>
-                                Details
-                            </Link>
-                        )}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        // <div className='products-container'>
+        //     <h1>Products</h1>
+        //     <ul className='products-flex'>
+        //         {products.map((product) => (
+        //             <li className='product-li' key={product.id}>
+        //                 <img src={product.imageUrl} alt={product.name} />
+        //                 <h3 className='product-name'>{product.name}</h3>
+        //                 <p className='product-price'>Price: ${product.price}</p>
+        //                 {expandedProduct === product.id ? (
+        //                     <div className='see-more'>
+        //                         <p>{product.additionalDetails}</p>
+        //                         <button  onClick={() => handleExpandProduct(null)}></button>
+        //                     </div>
+        //                 ) : (
+        //                     <Link className='btn-see-more' to={`/Products/${product.id}`} onClick={() => handleExpandProduct(product.id)}>
+        //                         Details
+        //                     </Link>
+        //                 )}
+        //             </li>
+        //         ))}
+        //     </ul>
+        // </div>
+        <>
+            
+        </>
     );
 };
 

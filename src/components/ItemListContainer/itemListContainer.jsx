@@ -1,51 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { MockFetch } from '../data/mockFetch';
+import { useEffect, useState } from "react"
+import { mFetch } from "../data/mockFetch"
+import ItemList from "./ItemList/ItemList"
+import { useParams } from "react-router-dom"
 
-const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [showProducts, setShowProducts] = useState(false);
-
-    useEffect(() => {
-        MockFetch()
-            .then((resolve) => {
-                setProducts(resolve);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }, []);
+const Loading = ()=>{
+    // estados y componentes hijos
+    // useEffect(()=>{
+        // acciones
+        // return ()=>{ // clean up
+        //     console.log('desmontando loading...')
+        // } 
+    // })
 
     return (
-        <center>
-            <div>
-                <button onClick={() => setShowProducts(true)}>Ver Productos</button>
-                {showProducts && (
-                    <div>
-                        {loading ? (
-                            <h2>Loading...</h2>
-                        ) : (
-                            products.map((product) => (
-                                <div key={product.id} className=''>
-                                    <div className=''>
-                                        <img className='' src={product.imageUrl} alt='img' />
-                                        <p>Description: {product.description}</p>
-                                        <p>Precio: {product.price}</p>
-                                    </div>
-                                    <div>
-                                        <button className=''>Detalle</button>
-                                    </div>
-                                </div>
-                            ))
-                        )}
-                    </div>
-                )}
-            </div>
-        </center>
-    );
-};
+        <>
+            <h2>Loading ...</h2> 
+        </>
+    )
+}
 
-export default ItemListContainer;
+
+const ItemListContainer = () => { 
+    const [products, setProducts] = useState([])
+    const [ loading, setLoading ] = useState(true)
+    const [ meGusta, setMeGusta ] = useState(false)
+    
+    // evento props estado ??? 
+    const { cid } = useParams()
+    // console.log(cid)
+
+    useEffect(()=>{
+        if (cid) {
+            mFetch()
+            .then(respuesta => setProducts( respuesta.filter(product => cid === product.category )))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))            
+        } else {            
+            mFetch()
+            .then(respuesta => setProducts(respuesta))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+        }
+    }, [cid])
+
+    // función para agregar un nuevo producto
+    const handleAddProduct = () => {
+        setProducts([
+            ...products,
+            {id: products.length + 1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
+        ])
+    }
+    console.log('render de ItemlistContainer')
+    return (
+            <div className="div-products-ilc">
+            { loading ? 
+                    <Loading />
+                :   
+                    <ItemList products={products} />
+            }
+            </div>
+    )
+}
+
+export default ItemListContainer

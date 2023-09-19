@@ -1,41 +1,55 @@
-import React, {createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext([])
-    
-//Estados del lado de arriba funciones del lado de abajo
-    
+const CartContext = createContext([])
+
 export const useCartContext = () => useContext(CartContext)
 
+export const CartContextProvider = ({ children }) => {
+    // estados y funciones del contexto
+    const [cartList, setCartList] = useState([])
 
+    const isProduct = (id) => cartList.findIndex(prod => prod.id === id)
 
-export const CartContextProvider = ( {children} ) => {
-    
-    const [cartList, setCartList] = useState({})
+    const addProduct = (newProduct)=>{
+        // lógica  para evitar duplicados
+        // 1 - existe el producto         
+        // findIndex
 
-    const addProduct = (newProduct) => {
-        setCartList([
-            ...cartList, newProduct
-        ])
+        const index = isProduct(newProduct.id) // 0 -mucho
+        // console.log(index)
+        if (index !== -1) {
+            cartList[index].quantity += newProduct.quantity // modique una prop de un obj de cart
+            setCartList([...cartList]) // agregar esto si o si 
+        } else {
+            setCartList([
+                ...cartList,
+                newProduct
+            ])            
+        }
+
     }
 
-    //Eliminar por producto
-    //mostar la cantidad total de productos que tenemos, hacerlo comparado los productos por id, 
-    // y si son iguales que se suemn en 1 solo
-    //precio total
+    // Eliminar por producto
+    const eliminarProducto = (pid) => setCartList(cartList.filter(prod => prod.id !== pid))
+    // mostrar la cantidad de productos total que tienen 
+    const cantidadTotal = ()=> cartList.reduce((cantidadTotal, objProduct)=> cantidadTotal += objProduct.quantity ,0)
+    // precio total (()=>{}, inicializador de precio total)
+    const precioTotal = () => cartList.reduce((precioTotal, objProduct)=> precioTotal += (objProduct.price * objProduct.quantity) ,0)
 
-
-    const deleteCart = () => {
+    const deleteCart = ()=>{
         setCartList([])
     }
 
-
     return (
-        //estados y funciones del context
-        <CartContext.Provider value={{cartList, addProduct, deleteCart}}> 
-        {children}
+        <CartContext.Provider value={{
+            cartList,
+            addProduct,
+            deleteCart,
+            cantidadTotal,
+            precioTotal,
+            eliminarProducto
+        }}>
+            {children}
         </CartContext.Provider>
-        
     )
-    }
-    
-    
+}

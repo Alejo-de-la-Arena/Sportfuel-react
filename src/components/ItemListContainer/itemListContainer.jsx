@@ -2,35 +2,28 @@ import { useEffect, useState } from "react"
 import { mFetch } from "../data/mockFetch"
 import ItemList from "./ItemList/ItemList"
 import { useParams } from "react-router-dom"
-
-const Loading = ()=>{
-    // estados y componentes hijos
-    // useEffect(()=>{
-        // acciones
-        // return ()=>{ // clean up
-        //     console.log('desmontando loading...')
-        // } 
-    // })
-
-    return (
-        <>
-            <h2>Loading ...</h2> 
-        </>
-    )
-}
+import { Loading } from "../../Loading/Loading"
 
 
 const ItemListContainer = () => { 
     const [products, setProducts] = useState([])
     const [ loading, setLoading ] = useState(true)
-    const [ meGusta, setMeGusta ] = useState(false)
     
     // evento props estado ??? 
     const { cid } = useParams()
-    // console.log(cid)
+
+    console.log(cid)
 
     useEffect(()=>{
         if (cid) {
+            // const db =getFireStore
+            // const queryCollection = collection(db, 'products')
+            // const queryFilter = cid ? query(queryCollection, where('category', '==', cid)) 
+            // : queryCollection
+            // getDocs(queryFilter)
+            // .then(resp => setProducts(resp.docs.map(prod => ( {id: prod.id, ...prod.data() } ))))
+            // .catch(err => console.log(err))
+            // .finally(() => setLoading(false))
             mFetch()
             .then(respuesta => setProducts( respuesta.filter(product => cid === product.category )))
             .catch(err => console.log(err))
@@ -50,7 +43,7 @@ const ItemListContainer = () => {
             {id: products.length + 1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
         ])
     }
-    console.log('render de ItemlistContainer')
+
     return (
             <div className="div-products-ilc">
             { loading ? 

@@ -5,17 +5,14 @@ import ItemDetail from "./ItemDetail/ItemDetail"
 
 
 const ItemDetialContainer = () => {
-    // api manejo de estados etc
     const [product, setProduct ] = useState({})
     const { pid } = useParams()
     console.log(pid)
 
     useEffect(()=>{
-        // llamada a la api
-        mFetch(Number(pid))
+        mFetch(pid)
         .then(resp => setProduct(resp))
         .catch(err=> console.log(err))
-        // .finally(setloading)
     },[])
 
     return (

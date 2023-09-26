@@ -105,3 +105,8 @@
 .btn-nav:hover{
     background-color: var(--main-color);
 }
+
+.cart-num{
+    font-size: 1.5rem;
+    color: var(--text-color);
+}

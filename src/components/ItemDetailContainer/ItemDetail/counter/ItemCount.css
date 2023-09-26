@@ -10,22 +10,47 @@
 }
 
 .item-count-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     min-height: 20vh;
     background-color: var(--bg-color);
 }
 
+
+.count-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.num-quantity{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
 .item-count-container h2{
+    text-align: center;
     color: var(--text-color);
 }
 
 .btn-counter{
-    background-color: var(--main-color);
+    border: double .2rem var(--main-color);
+    font-size: 1.5rem;
+    width: 3rem;
 }
 
 .btn-add-to-cart{
-    background-color: var(--second-bg-color);
+    padding-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-add-to-cart button{
+    font-size: 1.7rem;
+    border-radius: 5%;
+}
+
+.btn-add-to-cart button:hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+    
 }

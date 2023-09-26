@@ -1,4 +1,5 @@
 import heroImg from '../../assets/img/creatine-img-pexels.avif'
+import { Link } from 'react-router-dom';
 import { products } from '../data/mockFetch';
 import './MainStyle.css';
 
@@ -10,7 +11,9 @@ const HeroSection = () => {
                 <div className="hero-content">
                     <h1 className="hero-tagline">Unlock Your Potential</h1>
                     <p className="hero-subtitle">Elevate your fitness journey with premium sports supplements.</p>
-                    <button className="cta-button"><a href="#Products">Explore Products</a></button>
+                    <Link to="/ItemListContainer">
+                    <button className="cta-button">Explore Products</button>
+                    </Link>
                 </div>
             </section>
     );

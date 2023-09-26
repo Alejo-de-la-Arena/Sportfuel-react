@@ -17,14 +17,17 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
     return (
         <div className="item-count-container">
-            <h2>Counter</h2>
-            <button className="btn-counter" onClick={handleAdd}> + 1 </button>
-            <label>
-                <strong>{counter}</strong> 
-            </label>
-            <button
-                className="btn-counter" onClick={handleSubstract}> - 1 </button>
-            <button className="btn-add-to-cart" onClick={handleOnAdd}> Agregar al carrito </button>
+            <h2>Quantity</h2>
+            <div className="count-flex"> 
+                <button className="btn-counter" onClick={handleAdd}> + 1 </button>
+                <label  className="num-quantity">
+                    <strong>{counter}</strong> 
+                </label>
+                <button className="btn-counter" onClick={handleSubstract}> - 1 </button>
+            </div>
+            <div className="btn-add-to-cart"> 
+                <button onClick={handleOnAdd}> Add to Cart </button>
+            </div>
         </div>
     )
 }

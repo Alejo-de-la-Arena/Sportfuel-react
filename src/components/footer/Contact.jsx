@@ -1,6 +1,6 @@
-import './FooterStyle.css'
+import './Contact.css'
 
-const Footer = () => {
+const Contact = () => {
     return (
             <section className="contact">
                 <h2 className="section-title"> ¡Contact Us! </h2>
@@ -14,4 +14,4 @@ const Footer = () => {
             </section>
     );
 }
-export default Footer
+export default Contact

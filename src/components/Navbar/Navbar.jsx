@@ -4,20 +4,29 @@ import logoImg from '../../assets/img/SFH-Logo.png';
 import { NavLink, Link } from 'react-router-dom';
 import './NavbarStyle.css'
 
+// Agregar categorias dinamicas
+const categories = [
+    {},
+    {}
+]
 
-const NavBar = ({children}) => {
-    const {cantidadTotal} = useCartContext()
+
+const NavBar = ({ children }) => {
+    const { cantidadTotal } = useCartContext()
     return (
         <div className='header'>
             <img src={logoImg} alt="Logo soportfuel" className="logo-img" />
             <h1 className="h1-sf"> SportFuel Hub </h1>
             <div className="navbar">
-                <Link className='nav-link' to='/ItemListContainer'> Home </Link>
-                <Link className='nav-link' to="/FeaturedProducts">Featured Products</Link>
-                <Link className='nav-link' to="/AboutUs">About Us</Link>
-                <Link className='nav-link' to="/Testimonials">Testimonials </Link>
-                <Link className='nav-link' to="/Contact">Contact </Link>
-                <Link className='nav-link' to="/Products">Products </Link>
+                {/* {categories.map  }
+                <NavLink key={categories.id} to={`/categories/`} */}
+                <Link className='nav-link' to="/Home"> Home </Link>
+                <a className='nav-link' href="#FeaturedProducts">Featured Products</a>
+                <a className='nav-link' href="#AboutUs">About Us</a>
+                <a className='nav-link' href="#Testimonials">Testimonials </a>
+                <a className='nav-link' href="#Contact">Contact </a>
+                <NavLink className='nav-link' to="/ItemListContainer"> Products </NavLink>
+
             </div>
             <div className="search-bar">
                 <i className='bx bx-search'> </i>
@@ -25,12 +34,13 @@ const NavBar = ({children}) => {
                 <button className='btn-nav'> Search </button>
             </div>
             <div>
-                <Link to='/cart'>
-                    {cantidadTotal()} <Cartwidget saludo={'hola saludos'} />    
+                <Link to='/cart' className='cart-num'>
+                    {cantidadTotal()} <Cartwidget />
                 </Link>
             </div>
             {children}
-        </div> 
-)}
+        </div>
+    )
+}
 
 export default NavBar

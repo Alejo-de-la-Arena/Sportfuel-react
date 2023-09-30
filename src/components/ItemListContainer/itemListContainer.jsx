@@ -37,12 +37,12 @@ const ItemListContainer = () => {
     }, [cid])
 
     // función para agregar un nuevo producto
-    const handleAddProduct = () => {
-        setProducts([
-            ...products,
-            {id: products.length + 1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
-        ])
-    }
+    // const handleAddProduct = () => {
+    //     setProducts([
+    //         ...products,
+    //         {id: products.length + 1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
+    //     ])
+    // }
 
     return (
             <div className="div-products-ilc">

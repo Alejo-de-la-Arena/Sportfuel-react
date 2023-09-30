@@ -2,23 +2,28 @@ import { memo } from "react"
 import { Link } from "react-router-dom"
 import '../../ItemListContainer.css'
 
-const Item = memo(({product}) => {
+const Item = memo(({ product }) => {
     return (
-        <div className="container-products">
-            <div className="product-inf">
-                <img className="img-product" src={product.imageUrl} alt="imagen prenda"/>
-                <p>Name: {product.name}</p>
-                <p>Description: {product.description}</p>
-                <p>Price: {product.price}</p>
-                <p>Type: {product.type} </p>
-                <p>Size: {product.size}</p>
+        <>
+            <div className="container-products">
+                <div className="backg-style-product">
+                    <img className="img-product" src={product.imageUrl} alt="imagen prenda" />
+                    <div className="product-inf">
+                        <h2>{product.name}</h2>
+                        <p className="prod-p">{product.description}</p>
+                        <p className="prod-p">Type: {product.type} </p>
+                        <p className="prod-p">{product.size}</p>
+                        <p className="prod-price">${product.price}</p>
+                    </div>
+
+                    <div className="card-footer">
+                        <Link to={`/detalle/${product.id}`}>
+                            <button className="btn-detail">Detail</button>
+                        </Link>
+                    </div>
+                </div>
             </div>
-            <div className="card-footer">
-                <Link to={`/detalle/${product.id}`}>
-                    <button className="btn-detail">Detail</button>
-                </Link>
-            </div>
-        </div>
+        </>
     )
 })
 

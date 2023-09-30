@@ -1,9 +1,10 @@
 import React from 'react'
+import './Loading.css'
 
 export const Loading = () => {
     return (
         <>
-            <h2>Loading ...</h2> 
+            <span class="loader"></span>
         </>
     )
 }

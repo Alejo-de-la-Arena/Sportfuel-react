@@ -18,15 +18,15 @@ const ItemDetail = ({ product }) => {
         <>
             <Loading />
             <div className="container-detail">
-                <h2>Product Detail</h2>
+                <h1>Product Detail</h1>
                 <div className="div-flex">
                     <img className="product-img" src={product.imageUrl} alt="imagen" />
                     <div className="div-info">
-                        <p>Name: <strong>{product.name}</strong></p>
-                        <p>Description: {product.description}</p>
-                        <p>Price: {product.price}</p>
-                        <p>Stock: {product.stock}</p>
-                        <p>Type: {product.type}</p>
+                        <h2><strong>{product.name}</strong></h2>
+                        <p className="prod-p">{product.description}</p>
+                        <p className="prod-p">Stock: {product.stock}</p>
+                        <p className="prod-p">Type: {product.type}</p>
+                        <p className="prod-price">${product.price}</p>
                     </div>
                     <div>
                         {isCounter ?

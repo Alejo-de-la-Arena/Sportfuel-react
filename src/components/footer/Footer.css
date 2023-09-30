@@ -1,0 +1,39 @@
+:root {
+    --bg-color: #f4f4f4;
+    
+    --second-bg-color: #ff4500;
+    
+    --text-color: #333333;
+    
+    --main-color: #007acc;
+    
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.footer-text p{
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.footer-icon a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5rem ease;
+    font-size: 2rem;
+}
+
+.footer-icon a:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+}

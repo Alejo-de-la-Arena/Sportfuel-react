@@ -20,7 +20,7 @@ const NavBar = ({ children }) => {
             <div className="navbar">
                 {/* {categories.map  }
                 <NavLink key={categories.id} to={`/categories/`} */}
-                <Link className='nav-link' to="/Home"> Home </Link>
+                <Link className='nav-link' to="/"> Home </Link>
                 <a className='nav-link' href="#FeaturedProducts">Featured Products</a>
                 <a className='nav-link' href="#AboutUs">About Us</a>
                 <a className='nav-link' href="#Testimonials">Testimonials </a>

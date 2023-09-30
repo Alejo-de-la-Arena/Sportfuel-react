@@ -1,14 +1,13 @@
-:root {
-    --bg-color: #333333;
+/* :root {
+    --bg-color: #f4f4f4;
     
-    --second-bg-color: #007acc;
+    --second-bg-color: #ff4500;
     
-    --text-color: #fff;
+    --text-color: #333333;
     
-    --main-color: #ffa500;
+    --main-color: #007acc;
     
 }
-
 
 img{
     width: 25rem;
@@ -64,4 +63,4 @@ img{
 .btn-see-more{
     background-color: var(--main-color);
     font-size: 2rem;
-}
+} */

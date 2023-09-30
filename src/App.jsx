@@ -7,12 +7,12 @@ import ValuePropositions from './components/main/ValuePropositions'
 import AboutUs from './components/main/AboutUs'
 import Testimonials from './components/main/Testimonials'
 import ItemListContainer from './components/ItemListContainer/itemListContainer'
-import Contact from './components/footer/Contact'
+import Contact from './Contact/Contact';
 import ItemDetialContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer/CartContainer';
+import { Footer } from './components/footer/Footer';
 import './App.css'
-
 
 function Home() {
     return (
@@ -36,6 +36,9 @@ function Home() {
                 <Contact />
             </div>
             <Outlet />
+            <div>
+                <Footer />
+            </div>
         </div>
     )
 }
@@ -44,9 +47,9 @@ function App() {
     return (
         <Router>
             <CartContextProvider>
-                <NavBar />  
+                <NavBar />
                 <Routes>
-                <Route path='/Home' element={ <Home /> } />
+                    <Route path='/' element={ <Home /> } />
                 {/* <Route path='/category/:cid' element={ <Home /> } /> */}
                     <Route path='/ItemListContainer' element={<ItemListContainer /> }/>
                     <Route path='/category/:cid' element={<ItemListContainer /> }/>

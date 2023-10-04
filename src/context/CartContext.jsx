@@ -5,45 +5,55 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({ children }) => {
-    const [cartList, setCartList] = useState([])
-    const isProduct = (id) => cartList.findIndex(prod => prod.id === id)
+    const [cartList, setCartList] = useState([]);
+    const isProduct = (id) => cartList.findIndex((prod) => prod.id === id);
 
-    const addProduct = (newProduct)=>{
-
-        const index = isProduct(newProduct.id) 
+    const addProduct = (newProduct) => {
+        const index = isProduct(newProduct.id);
         if (index !== -1) {
-            cartList[index].quantity += newProduct.quantity
-            setCartList([...cartList])
+            cartList[index].quantity += newProduct.quantity;
+            setCartList([...cartList]);
         } else {
-            setCartList([
-                ...cartList,
-                newProduct
-            ])            
+            setCartList([...cartList, newProduct]);
         }
+    };
 
-    }
+    const reduceQuantity = (pid) => {
+        const updatedCartList = [...cartList];
+        const index = updatedCartList.findIndex((prod) => prod.id === pid);
 
+        if (index !== -1) {
+            if (updatedCartList[index].quantity > 1) {
+                updatedCartList[index].quantity -= 1;
+                setCartList(updatedCartList);
+            } else {
+                
+            }
+        }
+    };
 
-    const eliminarProducto = (pid) => setCartList(cartList.filter(prod => prod.id !== pid))
+    const totalQuantity = () =>
+        cartList.reduce((totalQuantity, objProduct) => totalQuantity + objProduct.quantity, 0);
 
-    const cantidadTotal = ()=> cartList.reduce((cantidadTotal, objProduct)=> cantidadTotal += objProduct.quantity ,0)
+    const totalPrice = () =>
+        cartList.reduce((totalPrice, objProduct) => totalPrice + objProduct.price * objProduct.quantity, 0);
 
-    const precioTotal = () => cartList.reduce((precioTotal, objProduct)=> precioTotal += (objProduct.price * objProduct.quantity) ,0)
-
-    const deleteCart = ()=>{
-        setCartList([])
-    }
+    const deleteCart = () => {
+        setCartList([]);
+    };
 
     return (
-        <CartContext.Provider value={{
-            cartList,
-            addProduct,
-            deleteCart,
-            cantidadTotal,
-            precioTotal,
-            eliminarProducto
-        }}>
+        <CartContext.Provider
+            value={{
+                cartList,
+                addProduct,
+                deleteCart,
+                totalQuantity,
+                totalPrice,
+                reduceQuantity
+            }}
+        >
             {children}
         </CartContext.Provider>
-    )
-}
+    );
+};

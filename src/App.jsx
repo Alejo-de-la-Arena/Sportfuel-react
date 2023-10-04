@@ -7,7 +7,7 @@ import ValuePropositions from './components/main/ValuePropositions'
 import AboutUs from './components/main/AboutUs'
 import Testimonials from './components/main/Testimonials'
 import ItemListContainer from './components/ItemListContainer/itemListContainer'
-import Contact from './Contact/Contact';
+import Contact from './components/Contact/Contact';
 import ItemDetialContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer/CartContainer';

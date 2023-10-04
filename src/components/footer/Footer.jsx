@@ -9,7 +9,7 @@ export const Footer = () => {
             <p><strong>SportFuel</strong>, maximum quality products | September 2023 </p>
         </div>
         <div className="footer-icon">
-            <a href="/"> <i class='bx bx-up-arrow-alt'></i></a>
+            <a href="/"> <i className='bx bx-up-arrow-alt'></i></a>
         </div>
         </div>
     )

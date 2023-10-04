@@ -1,0 +1,25 @@
+.btn-finish{
+    background-color: var(--main-color);
+    border-radius: .2rem;
+    box-sizing: border-box;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 8px 0.8em;
+    text-align: center;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-finish:hover,
+.btn-finish:focus{
+    background-color: var(--text-color);
+    color: var(--main-color);
+    cursor: pointer;
+    box-shadow: 0 0 1rem var(--main-color);
+}

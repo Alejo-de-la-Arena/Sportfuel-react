@@ -10,6 +10,7 @@
     
 }
 
+
 .hero {
     position: relative;
     height: 100vh;
@@ -108,7 +109,7 @@
 
 .product-image {
     width: 100%;
-    max-height: 200px;
+    max-height: 30rem;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
@@ -143,6 +144,7 @@
     border: none;
     border-radius: 50px;
     transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .product-button:hover {
@@ -255,7 +257,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1;
     grid-template-areas: "testimonial1 testimonial2 testimonial3";
-    gap: 2rem;
+    gap: 1rem;
+    margin: 2rem;
 }
 
 .testimonial {
@@ -300,4 +303,40 @@
     font-size: 2rem;
     font-weight: 600;
     color: var(--main-color);
+}
+
+@media (max-width: 425px) {
+    .hero{
+        width: 100%;
+    }
+
+    .featured-products{
+        padding: 0;
+    }
+    .product-carousel{
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-card{
+        width: 80%;
+    }
+    .about-us{
+        flex-direction: column;
+        
+    }
+    .about-content{
+        max-width: 100%;
+    }
+    .about-us img{
+        margin-top: 1rem;
+        max-width: 100%
+    }
+    .testimonial-div{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
+
 }

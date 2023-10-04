@@ -10,9 +10,8 @@ const Item = memo(({ product }) => {
                     <img className="img-product" src={product.imageUrl} alt="imagen prenda" />
                     <div className="product-inf">
                         <h2>{product.name}</h2>
-                        <p className="prod-p">{product.description}</p>
                         <p className="prod-p">Type: {product.type} </p>
-                        <p className="prod-p">{product.size}</p>
+                        <p className="prod-p">Size: {product.size}</p>
                         <p className="prod-price">${product.price}</p>
                     </div>
 

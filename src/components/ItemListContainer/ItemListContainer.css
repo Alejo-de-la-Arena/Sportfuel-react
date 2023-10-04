@@ -1,4 +1,3 @@
-
 :root {
     --bg-color: #f4f4f4;
     
@@ -17,7 +16,6 @@
     grid-template-rows: repeat(2, 1fr);
     padding-top: 5rem;
     background-color: var(--bg-color);
-
 }
 
 .container-products{
@@ -39,8 +37,6 @@
 .backg-style-product:hover{
     transform: scale(1.05);
 }
-
-
 
 .backg-style-product img{
     max-width: 100%;

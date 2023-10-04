@@ -2,8 +2,10 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { useCartContext } from "../../context/CartContext"
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './CartContainer.css'
 import { Loading } from '../../Loading/Loading'
+
+import './CartContainer.css'
+
 
 const CartContainer = () => {
     const [dataForm, setDataForm] = useState({
@@ -11,11 +13,15 @@ const CartContainer = () => {
         phone: '',
         email: ''
     })
-    // if (dataForm.name !== ''){
-        
-    // }
+
+    const isFormValid = () => {
+        return dataForm.name.trim() !== '' && dataForm.phone.trim() !== '' && dataForm.email.trim() !== '';
+    };
+
     const [id, setId] = useState('')
-    const { cartList, deleteCart, eliminarProducto, precioTotal } = useCartContext()
+    const { cartList, deleteCart, reduceQuantity, totalPrice } = useCartContext()
+
+    const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
     const handleAddOrder = async (evt) => {
         evt.preventDefault()
@@ -24,13 +30,15 @@ const CartContainer = () => {
         order.items = cartList.map(prod => {
             return { id: prod.id, name: prod.name, price: prod.price, quantity: prod.quantity }
         })
-        order.total = precioTotal()
+        order.total = totalPrice()
 
-        // Insertar una orden en la base de datos
         const queryDB = getFirestore()
         const ordersCollection = collection(queryDB, 'orders')
         addDoc(ordersCollection, order)
-            .then(({ id }) => setId(id))
+            .then(({ id }) => {
+            setId(id);
+            setPurchaseCompleted(true);
+        })
             .catch(err => console.log(err))
             .finally(() => {
                 setDataForm({
@@ -53,7 +61,7 @@ const CartContainer = () => {
         <>
             <Loading />
             <div className='cart-container'>
-                {id !== '' ? (
+                {purchaseCompleted ? (
                     <h3 className='purchase-generated'>The purchase order has been generated: {id}</h3>
                 ) : (
                     <>
@@ -62,22 +70,23 @@ const CartContainer = () => {
                                 <div className='cart-flex'>
                                     {cartList.map(prod => (
                                         <div className='div-product' key={prod.id}>
-                                            <h2> <strong> {prod.name} </strong> </h2>
+                                            <h2>{prod.name}</h2>
                                             <img src={prod.imageUrl} className="prod-img-cart" />
                                             <div className='prod-cart-info'>
                                                 ${prod.price} - Quantity: {prod.quantity}
-                                                <button className="btn-delete" onClick={() => eliminarProducto(prod.id)}> X </button>
+                                                <button className="btn-delete" onClick={() => reduceQuantity(prod.id)}> X </button>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className='cart-price-empty'>
-                                    <h3>Total Price: <strong>${precioTotal()} </strong></h3>
+                                    <h3>Total Price: <strong>${totalPrice()} </strong></h3>
                                     <button className='btn-empty-cart' onClick={deleteCart}>Empty Cart</button>
                                 </div>
+
                                 <form onSubmit={handleAddOrder}>
                                     <div className='form-container'>
-                                    <h2> Name & Surname </h2>
+                                        <h2> Name & Surname </h2>
                                         <input className='form-cart'
                                             type='text'
                                             name='name'
@@ -87,7 +96,7 @@ const CartContainer = () => {
                                         />
                                         <h2> Phone Number </h2>
                                         <input className='form-cart'
-                                            type='text'
+                                            type='number'
                                             name='phone'
                                             placeholder='Enter phone number'
                                             value={dataForm.phone}
@@ -95,15 +104,21 @@ const CartContainer = () => {
                                         />
                                         <h2> Email </h2>
                                         <input className='form-cart'
-                                            type='text'
+                                            type='email'
                                             name='email'
                                             placeholder='Enter email'
                                             value={dataForm.email}
                                             onChange={handleOnChange}
                                         />
-                                        <button className="btn-finish">
-                                            Complete Order
-                                        </button>
+                                        <div className='btn-container'>
+                                            <button
+                                                type="submit" 
+                                                disabled={!isFormValid()}
+                                                className='btn-finish-order'
+                                            >
+                                                Finish Order
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </>

@@ -37,6 +37,10 @@ strong{
     color: var(--text-color);
 }
 
+.prod-p{
+    width: 50rem;
+}
+
 .div-flex{
     display: flex;
     border: .2rem solid var(--main-color);

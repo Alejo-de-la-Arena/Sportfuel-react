@@ -2,40 +2,43 @@ import { Cartwidget } from './CartWidget/Cartwidget';
 import { useCartContext } from '../../context/CartContext';
 import logoImg from '../../assets/img/SFH-Logo.png';
 import { NavLink, Link } from 'react-router-dom';
+import { useState } from 'react';
 import './NavbarStyle.css'
+import Filter from '../Filter/Filter';
 
-// Agregar categorias dinamicas
-const categories = [
-    {},
-    {}
-]
+// const categories = [
+//     {},
+//     {}
+// ]
 
 
 const NavBar = ({ children }) => {
-    const { cantidadTotal } = useCartContext()
+    const { totalQuantity } = useCartContext()
+    const [menuActive, setMenuActive] = useState(false);
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+    };
     return (
         <div className='header'>
             <img src={logoImg} alt="Logo soportfuel" className="logo-img" />
             <h1 className="h1-sf"> SportFuel Hub </h1>
-            <div className="navbar">
+            <i className={`bx bx-menu ${menuActive ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}></i>
+            <div className={`navbar ${menuActive ? 'active' : ''}`}>
                 {/* {categories.map  }
                 <NavLink key={categories.id} to={`/categories/`} */}
-                <Link className='nav-link' to="/"> Home </Link>
-                <a className='nav-link' href="#FeaturedProducts">Featured Products</a>
-                <a className='nav-link' href="#AboutUs">About Us</a>
-                <a className='nav-link' href="#Testimonials">Testimonials </a>
-                <a className='nav-link' href="#Contact">Contact </a>
-                <NavLink className='nav-link' to="/ItemListContainer"> Products </NavLink>
-
+                <Link className='nav-link active' to="/">Home</Link>
+                <Link className='nav-link' to="/Protein">Protein</Link>
+                <Link className='nav-link' to="/Creatine">Creatine</Link>
+                <NavLink className='nav-link' to="/ItemListContainer">Products</NavLink>
             </div>
             <div className="search-bar">
                 <i className='bx bx-search'> </i>
                 <input type="text" placeholder="Search Products..." />
-                <button className='btn-nav'> Search </button>
+                <button className='btn-nav'>Search</button>
             </div>
-            <div>
-                <Link to='/cart' className='cart-num'>
-                    {cantidadTotal()} <Cartwidget />
+            <div className='cart-num'>
+                <Link to='/cart'>
+                    {totalQuantity()} <Cartwidget />
                 </Link>
             </div>
             {children}

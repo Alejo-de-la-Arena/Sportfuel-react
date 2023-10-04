@@ -13,8 +13,8 @@ const FeaturedProducts = () => {
                     <div className="product-card">
                         <img src={proteinImg} alt="Product 1" className="product-image" />
                         <h3 className="product-title">Premium Whey Protein</h3>
-                        <p className="product-description">Fuel your workouts with our high-quality whey protein powder.</p>
-                        <span className="product-price">$29.99</span>
+                        <p className="product-description">Fuel your workouts with our high-quality whey protein powder with an amazing flavour.</p>
+                        <span className="product-price">$20.000</span>
                         <Link to="/ItemListContainer"> 
                         <button className="product-button">Shop Now</button>
                         </Link>
@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
                         <img src={creatineImg} alt="Product 2" className="product-image" />
                         <h3 className="product-title">Advanced Creatine Blend</h3>
                         <p className="product-description">Boost your strength and endurance with our advanced creatine formula.</p>
-                        <span className="product-price">$19.99</span>
+                        <span className="product-price">$17.000</span>
                         <Link to="/ItemListContainer"> 
                         <button className="product-button">Shop Now</button>
                         </Link>

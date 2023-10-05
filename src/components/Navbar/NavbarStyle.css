@@ -170,10 +170,34 @@
     .logo-img{
         width: 10rem;
         height: 8rem;
+        grid-area: logo-img;
+    }
+    #menu-icon{
+        grid-area: menu-icon;
+    }
+    .h1-sf{
+        grid-area: h1-sf;
     }
     .search-bar{
         width: 25rem;
+        grid-area: search-bar;
     }
+    .cart-num{
+        grid-area: cart-num;
+    }
+
+    .header{
+        display: grid;
+        grid-template-columns: repeat(3, .5fr);
+        grid-template-rows: repeat(2, .5fr);
+        place-items: center;
+        grid-template-areas: 
+        "logo-img h1-sf menu-icon"
+        ". search-bar cart-num"
+        ;
+        gap: 1.5rem;
+    }
+    
     .btn-nav{
         font-size: 1.2rem;
         margin-left: 0;
@@ -182,6 +206,7 @@
 
 @media (max-width: 425px){
     .header{
+        display: flex;
         flex-direction: column;
     }
     .hero{

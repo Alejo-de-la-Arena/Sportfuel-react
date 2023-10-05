@@ -334,9 +334,9 @@
     .testimonial-div{
         display: flex;
         flex-direction: column;
+        margin: 3rem auto;
         width: 80%;
-        margin-top: 3rem;
-        margin-left: 5rem;
+        margin: 5rem auto;
     }
 
 }

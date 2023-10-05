@@ -37,3 +37,11 @@
 .footer-icon a:hover{
     box-shadow: 0 0 1rem var(--main-color);
 }
+
+@media (max-width: 425px){
+    .footer{
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+}

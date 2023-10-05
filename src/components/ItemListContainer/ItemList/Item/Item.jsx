@@ -5,7 +5,6 @@ import '../../ItemListContainer.css'
 const Item = memo(({ product }) => {
     return (
         <>
-            <div className="container-products">
                 <div className="backg-style-product">
                     <img className="img-product" src={product.imageUrl} alt="imagen prenda" />
                     <div className="product-inf">
@@ -14,14 +13,12 @@ const Item = memo(({ product }) => {
                         <p className="prod-p">Size: {product.size}</p>
                         <p className="prod-price">${product.price}</p>
                     </div>
-
                     <div className="card-footer">
                         <Link to={`/detalle/${product.id}`}>
                             <button className="btn-detail">Detail</button>
                         </Link>
                     </div>
                 </div>
-            </div>
         </>
     )
 })

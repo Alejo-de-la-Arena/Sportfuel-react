@@ -1,9 +1,4 @@
-
-
-Deploy:
-
-
-    # SportFuel Hub - Fueling Your Passion for Sports
+# SportFuel Hub - Fueling Your Passion for Sports
 
 Welcome to **SportFuel Hub**, your personal portal to top-quality sports supplements! If you're like me, someone passionate about sports and fitness, you'll appreciate the importance of proper nutrition and supplementation in enhancing athletic performance, building muscle, combating workout fatigue, and even boosting cognitive abilities through creatine consumption.
 
@@ -34,6 +29,8 @@ Creatine is renowned for its ability to enhance athletic performance, increase e
 - **Expert Advice**: I'm here to share my expertise and guide you in making informed choices based on your fitness goals.
 
 - **Customer-Centric**: Your health, fitness, and satisfaction are at the core of SportFuel Hub's mission.
+
+## Deploy:
 
 ## Contact Me
 

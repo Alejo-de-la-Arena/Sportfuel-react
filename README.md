@@ -30,9 +30,6 @@ Creatine is renowned for its ability to enhance athletic performance, increase e
 
 - **Customer-Centric**: Your health, fitness, and satisfaction are at the core of SportFuel Hub's mission.
 
-## Deploy:
-- 
-
 ## Contact Me
 
 - **Mail**: alejodelaarenaa@gmail.com

@@ -1,17 +1,17 @@
-import { memo } from "react"
-import Filter from "../../Filter/Filter"
 import Item from "./Item/Item"
 import '../ItemListContainer.css'
 
-const ItemList = memo( ({ products }) => { 
-        return (
-            <>
-                {
-                    products.map(product =>  <Item key={product.id} product={product} /> )
+const ItemList = ({ products, selectedCategory }) => {
+    return (
+        <>
+            {products.map((product) => {
+                if (!selectedCategory || product.category === selectedCategory) {
+                    return <Item key={product.id} product={product} />;
                 }
-            </>
-        )
-    }
-) 
+                return null;
+            })}
+        </>
+    );
+};
 
 export default ItemList

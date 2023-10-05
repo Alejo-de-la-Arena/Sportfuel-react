@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Outlet } from 'react-router-dom';
-import NavBar from './components/Navbar/Navbar'
+import NavBar from './components/Navbar/NavBar';
 import HeroSection from './components/main/HeroSection'
 import FeaturedProducts from './components/main/FeaturedProducts'
 import ValuePropositions from './components/main/ValuePropositions'
@@ -50,7 +50,6 @@ function App() {
                 <NavBar />
                 <Routes>
                     <Route path='/' element={ <Home /> } />
-                {/* <Route path='/category/:cid' element={ <Home /> } /> */}
                     <Route path='/ItemListContainer' element={<ItemListContainer /> }/>
                     <Route path='/category/:cid' element={<ItemListContainer /> }/>
                     <Route path='/detalle/:pid' element={<ItemDetialContainer /> }/>

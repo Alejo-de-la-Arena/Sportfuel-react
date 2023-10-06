@@ -8,7 +8,6 @@ import './NavbarStyle.css'
 const NavBar = ({ children}) => {
     const { totalQuantity } = useCartContext()
     const [menuActive, setMenuActive] = useState(false);
-    const [setSelectedCategory] = useState(null);
     const toggleMenu = () => {
         setMenuActive(!menuActive);
     };
@@ -19,8 +18,8 @@ const NavBar = ({ children}) => {
             <i className={`bx bx-menu ${menuActive ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}></i>
             <div className={`navbar ${menuActive ? 'active' : ''}`}>
                 <NavLink className='nav-link ' to="/">Home</NavLink>
-                <NavLink className='nav-link' to="/category/protein" onClick={() => setSelectedCategory('protein')}>Protein</NavLink>
-                <NavLink className='nav-link' to="/category/creatine" onClick={() => setSelectedCategory('creatine')}>Creatine</NavLink>
+                <NavLink className='nav-link' to="/category/protein">Protein</NavLink>
+                <NavLink className='nav-link' to="/category/creatine">Creatine</NavLink>
                 <NavLink className='nav-link' to="/ItemListContainer">Products</NavLink>
             </div>
             <div className="search-bar">

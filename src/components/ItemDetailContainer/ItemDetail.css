@@ -94,13 +94,25 @@ strong{
     
 }
 
+@media (max-width: 768px){
+    .div-info{
+        margin: 0;
+    }
+    .prod-p-detail{
+        width: 100%;
+    }
+}
+
 @media (max-width: 425px){
     .container-detail{
         margin-top: 20rem;
     }
     .product-img{
         width: 30rem;
-        height: 25rem;
+        height: 30rem;
         margin: .5rem;
+    }
+    .prod-p-detail{
+        width: 70%;
     }
 }

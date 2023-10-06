@@ -63,6 +63,7 @@ const CartContainer = () => {
             <div className='cart-container'>
                 {purchaseCompleted ? (
                     <h3 className='purchase-generated'>The purchase order has been generated: {id}</h3>
+                    
                 ) : (
                     <>
                         {cartList.length > 0 ? (

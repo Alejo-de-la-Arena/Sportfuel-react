@@ -20,15 +20,8 @@ Our protein supplements are carefully crafted to provide your body with the esse
 
 Creatine is renowned for its ability to enhance athletic performance, increase energy levels, and improve cognitive function. Whether you're an athlete or simply want to power through your workouts, our creatine supplements will help you reach new heights.
 
-## Why SportFuel Hub?
 
-- **Quality Assurance**: We source our products from trusted suppliers to ensure premium quality.
-
-- **Variety**: Explore a wide selection of supplements to meet your specific needs and preferences.
-
-- **Expert Advice**: I'm here to share my expertise and guide you in making informed choices based on your fitness goals.
-
-- **Customer-Centric**: Your health, fitness, and satisfaction are at the core of SportFuel Hub's mission.
+## Deploy:
 
 ## Contact Me
 

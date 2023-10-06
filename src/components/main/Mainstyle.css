@@ -308,7 +308,7 @@
 @media (max-width: 425px) {
     .hero{
         width: 100%;
-        margin-top: 18rem;
+        margin-top: 3rem;
     }
 
     .featured-products{
@@ -331,7 +331,11 @@
     }
     .about-us img{
         margin-top: 1rem;
-        max-width: 100%
+        max-width: 70%;
+    }
+    .about-image{
+        width: 35rem;
+        height: 12rem;
     }
     .testimonial-div{
         display: flex;

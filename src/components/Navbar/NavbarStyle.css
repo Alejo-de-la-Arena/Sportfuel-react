@@ -208,13 +208,14 @@
     .header{
         display: flex;
         flex-direction: column;
+        gap: .5rem;
     }
     .hero{
         margin-top: 10rem;
     }
     .logo-img{
-        width: 15rem;
-        height: 12rem;
+        width: 12rem;
+        height: 10rem;
     }
     .h1-sf{
         font-size: 3.5rem;
@@ -228,3 +229,4 @@
     }
     
     }
+    

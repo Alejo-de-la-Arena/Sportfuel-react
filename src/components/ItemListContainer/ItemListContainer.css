@@ -128,4 +128,7 @@
     .backg-style-product img{
         height: 25rem;
     }
+    .backg-style-product{
+        width: 80%;
+    }
 }

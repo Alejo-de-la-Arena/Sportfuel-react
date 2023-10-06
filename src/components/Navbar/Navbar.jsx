@@ -15,7 +15,6 @@ const NavBar = ({ children}) => {
         <div className='header'>
             <img src={logoImg} alt="Logo soportfuel" className="logo-img" />
             <h1 className="h1-sf"> SportFuel Hub </h1>
-            <div className='responsive-inline'> 
             <i className={`bx bx-menu ${menuActive ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMenu}></i>
             <div className={`navbar ${menuActive ? 'active' : ''}`}>
                 <NavLink className='nav-link ' to="/">Home</NavLink>
@@ -27,7 +26,6 @@ const NavBar = ({ children}) => {
                 <i className='bx bx-search' > </i>
                 <input type="text" placeholder="Search Products..." />
                 <button className='btn-nav'>Search</button>
-            </div>
             </div>
             <div className='cart-num'>
                 <Link to='/cart'>
